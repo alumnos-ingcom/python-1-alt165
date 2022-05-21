@@ -20,7 +20,7 @@ def convertir_a_fahrrenheit(centigrados):
     grados fahrenheit"""
     resultado = (centigrados * 9 / 5) + 32
     return resultado
-    
+
 def convertir_a_centigrados(fahrenheit):
     """convertir_a_centigrados(float) -> float
     Esta función toma como argumento un valor en
@@ -35,8 +35,6 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    pass
 
 if __name__ == "__main__":
     principal()
-

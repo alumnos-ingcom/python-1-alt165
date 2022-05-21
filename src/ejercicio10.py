@@ -4,33 +4,32 @@
 ################
 
 """
-10. Palíndromo
+11. Multiplos de
 
-Escribir una función que indique con True si una palabra o frase ingresada se trata de un palindromo. Palíndromo, es si se lee igual de derecha a izquierda que de izquierda a derecha.
+Escribir una función que indique con True si un número entero es multiplo
+de otro, utilizando sumas y restas.
 
 """
-def invertir_str(string):
-    invertido = ""
-    for element in string:
-        invertido = element + invertido
-    return invertido
 
-def es_palindromo(texto):
-    """
-    es_palindromo(string) -> boolean
-    esta función devuelve True si un string es palíndromo,
+def es_multiplo(numero, multiplo):
+    """es_multiplo(int,int)-> boolean
+    esta función devuelve True si multiplo es multiplo de numero,
     devuelve False si no lo es
     """
-    texto = texto.lower()
-    return texto == invertir_str(texto)
-
+    while multiplo >= numero:
+        multiplo = multiplo - numero
+    
+    if multiplo != 0:
+        return False
+    else:
+        return True
+        
+    
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    print(es_palindromo("aSdsa"))
-
+    print(es_multiplo(10,205))
 if __name__ == "__main__":
     principal()
-

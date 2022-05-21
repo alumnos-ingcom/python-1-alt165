@@ -17,13 +17,12 @@ def es_multiplo(numero, multiplo):
     """
     while multiplo >= numero:
         multiplo = multiplo - numero
-    
+
     if multiplo != 0:
         return False
-    else:
-        return True
-        
     
+    return True
+
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
@@ -32,4 +31,3 @@ def principal():
     print(es_multiplo(10,205))
 if __name__ == "__main__":
     principal()
-
