@@ -71,7 +71,7 @@ def principal():
     (La entrada, la llamada al algoritmo y la salida)
     """
     print(factores_primos(110))
-    pass
+   
 
 if __name__ == "__main__":
     principal()
