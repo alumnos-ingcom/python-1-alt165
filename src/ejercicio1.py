@@ -28,7 +28,7 @@ def convertir_a_centigrados(fahrenheit):
     grados centigrados
     """
     resultado = (fahrenheit - 32) * 5 / 9
-    return resultado 
+    return resultado
 
 def principal():
     """

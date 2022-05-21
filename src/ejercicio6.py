@@ -32,7 +32,7 @@ def ordenar_mayor_a_menor(uno, dos, tres):
     if dos < tres:
         dos, tres =swap(dos, tres)
     return uno, dos, tres
-    
+
 def ordenar_menor_a_mayor(uno, dos, tres):
     """ordenar_menor_a_mayor(int|float,int|float,int|float)->tupla(numero,numero,numero)
     esta funcion toma tres valores y los devuelve ordenados de menor a mayor
@@ -44,13 +44,12 @@ def ordenar_menor_a_mayor(uno, dos, tres):
     if dos > tres:
         dos, tres =swap(dos, tres)
     return uno, dos, tres
-    
+
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    pass
 
 if __name__ == "__main__":
     principal()

@@ -19,24 +19,20 @@ def absoluto(numero):
     Esta función devuelve el valor absoluto de un numero"""
     if numero >= 0:
         return numero
-    else:
-        return numero * (-1)
+    return numero * (-1)
 
 def compara(numero, otro_numero):
     """compara(int|float, int|float)-> int(1|-1|0)"""
     resto = numero - otro_numero
     if resto != 0:
         return resto / absoluto(resto)
-    else:
-        return resto
-    
+    return resto
+
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    pass
 
 if __name__ == "__main__":
     principal()
-

@@ -26,16 +26,15 @@ def suma_lenta(numero, otro_numero):
         while numero < 0:
             otro_numero = otro_numero - 1
             numero = numero + 1
-    
+
     return otro_numero
-        
+
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    pass
+
 
 if __name__ == "__main__":
     principal()
-

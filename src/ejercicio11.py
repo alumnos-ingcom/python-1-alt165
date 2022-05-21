@@ -20,7 +20,7 @@ def es_multiplo(numero, multiplo):
 
     if multiplo != 0:
         return False
-    
+
     return True
 
 def principal():

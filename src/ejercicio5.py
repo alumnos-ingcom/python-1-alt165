@@ -22,24 +22,22 @@ def division_lenta(dividendo, divisor):
         return 0, 0
     if (divisor < 0 or dividendo < 0):
         return 0, 0
-    
+
     cociente = 0
-    
+
     resto = dividendo
-    
+
     while resto >= divisor:
         resto = resto - divisor
         cociente = cociente + 1
-            
+
     return cociente, resto
-        
+
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    pass
 
 if __name__ == "__main__":
     principal()
-
