@@ -18,7 +18,7 @@ def swap(uno, dos):
     var_aux = uno
     uno = dos
     dos = var_aux
-    return uno,dos
+    return uno, dos
 
 
 def ordenar_mayor_a_menor(uno, dos, tres):
@@ -30,7 +30,7 @@ def ordenar_mayor_a_menor(uno, dos, tres):
     if uno < tres:
         uno, tres = swap(uno, tres)
     if dos < tres:
-        dos, tres =swap(dos, tres)
+        dos, tres = swap(dos, tres)
     return uno, dos, tres
 
 def ordenar_menor_a_mayor(uno, dos, tres):
@@ -42,7 +42,7 @@ def ordenar_menor_a_mayor(uno, dos, tres):
     if uno > tres:
         uno, tres = swap(uno, tres)
     if dos > tres:
-        dos, tres =swap(dos, tres)
+        dos, tres = swap(dos, tres)
     return uno, dos, tres
 
 def principal():
@@ -50,6 +50,12 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
+    numero1 = int(input("Ingrese el primer número: "))
+    numero2 = int(input("Ingrese el segundo número: "))
+    numero3 = int(input("Ingrese el tercer número: "))
+    print("Los valores ordenados son:\n")
+    print(ordenar_mayor_a_menor(numero1, numero2, numero3))
+    print(ordenar_menor_a_mayor(numero1, numero2, numero3))
 
 if __name__ == "__main__":
     principal()
