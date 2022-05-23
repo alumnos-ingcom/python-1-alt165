@@ -18,6 +18,8 @@ def es_primo(numero):
         return False
 
     es_primo_flag = True
+    if numero == 1 or numero == 2:
+        return True
 
     if numero % 2 == 0:
         es_primo_flag = False
@@ -39,7 +41,15 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    print(es_primo(0))
+    desde = 1
+    hasta = 200
+    while desde < hasta:
+        print(desde)
+        if es_primo(desde):
+            print(" es primo\n")
+        else:
+            print(" no es primo\n")
+        desde = desde + 1
 
 if __name__ == "__main__":
     principal()
