@@ -11,33 +11,7 @@ numero entero positivo.
 
 def factores_primos(numero):
 """
-def es_primo(numero):
-    """es_primo(int > 0)-> boolean
-    esta función devuelve True si un numero es primo,
-    si no lo es devuelve False
-    """
-    if numero <= 0:
-        return False
-
-    es_primo_flag = True
-
-    if numero == 1 or numero == 2:
-        return es_primo_flag
-
-    if numero % 2 == 0:
-        es_primo_flag = False
-        return es_primo_flag
-
-    mitad = numero // 2 #solo es necesario buscar divisores hasta la primer mitad del numero
-    contador = 3
-
-    while contador <= mitad:
-        if numero % contador == 0:
-            es_primo_flag = False
-            return es_primo_flag
-        contador = contador + 2 #solo es necesario comparar contra numeros impares
-
-    return es_primo_flag
+from ejercicio8 import es_primo
 
 def es_multiplo(multiplo, divisor):
     """es_multiplo(int, int)-> boolean
@@ -54,15 +28,15 @@ def factores_primos(numero):
     """
     if numero <= 0:
         return (0,)
-    else:
-        contador = 1
-        tupla = ()
-        while contador <= numero:
-            if es_multiplo(numero, contador) and es_primo(contador):
-                tupla_aux = (contador,)
-                tupla = tupla + tupla_aux
-            contador = contador + 1
-        return tupla
+
+    contador = 1
+    tupla = ()
+    while contador <= numero:
+        if es_multiplo(numero, contador) and es_primo(contador):
+            tupla_aux = (contador,)
+            tupla = tupla + tupla_aux
+        contador = contador + 1
+    return tupla
 
 def principal():
     """
@@ -70,6 +44,6 @@ def principal():
     (La entrada, la llamada al algoritmo y la salida)
     """
     print(factores_primos(110))
-   
+
 if __name__ == "__main__":
     principal()
