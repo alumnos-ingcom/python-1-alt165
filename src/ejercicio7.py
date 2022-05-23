@@ -14,13 +14,17 @@ Recuerden que un grado son 60 minutos y un minuto son 60 segundos.
 
 """
 def sexadecimal_a_decimal(horas, minutos, segundos):
-    """sexadecimal_a_decimal(horas int, minutos int, segundos int) -> int
+    """sexadecimal_a_decimal(horas int, minutos int < 60, segundos int < 60) -> int
     esta función toma tres valores expresados en grados minutos y segundos
-    y devuelve el valor expresado en segundos    
+    y devuelve el valor expresado en segundos
     """
-    return horas*3600+ minutos * 60 + segundos
+    total = horas * 3600 + minutos * 60 + segundos
+    return total
 
 def decimal_a_sexadecimal(numero):
+    """decimal_a_sexadecimal(int) -> tuple(int, int < 60, int < 60)
+    """
+    #hay que limitar la entrada para que no acepte segundos y minutos > 60
     horas = numero // 3600
     numero = numero % 3600
     minutos = numero // 60
@@ -32,8 +36,8 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    #print(sexadecimal_a_decimal(1,1,1))
-    #print(decimal_a_sexadecimal(sexadecimal_a_decimal(2,2,2)))
+    print(sexadecimal_a_decimal(1, 1, 1))
+    print(decimal_a_sexadecimal(sexadecimal_a_decimal(2, 70, 2)))
 
 if __name__ == "__main__":
     principal()
