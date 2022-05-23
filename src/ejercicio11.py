@@ -28,6 +28,6 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    print(es_multiplo(10,205))
+    print(es_multiplo(10, 205))
 if __name__ == "__main__":
     principal()
