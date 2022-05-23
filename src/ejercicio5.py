@@ -38,6 +38,14 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
+    numero1 = 7
+    numero2 = 2
+    resultado = division_lenta(numero1, numero2)
+    print(numero1, "/", numero2, "=", resultado)
+    resultado = division_lenta(numero2, numero1)
+    print(numero2, "/", numero1, "=", resultado)
+    resultado = division_lenta(numero1, numero1)
+    print(numero1, "/", numero1, "=", resultado)
 
 if __name__ == "__main__":
     principal()
