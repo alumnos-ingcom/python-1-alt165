@@ -17,15 +17,16 @@ Escribir una función que utilizando sumas y restas, reciba dos valores y retorn
 def absoluto(numero):
     """absoluto(int)->int
     Esta función devuelve el valor absoluto de un numero"""
-    if numero >= 0:
-        return numero
-    return numero * (-1)
+    if numero < 0:
+        numero = numero * (-1)
+    return numero
 
 def compara(numero, otro_numero):
     """compara(int|float, int|float)-> int(1|-1|0)"""
     resto = numero - otro_numero
     if resto != 0:
-        return resto / absoluto(resto)
+        resto = resto / absoluto(resto)
+    resto = int(resto)
     return resto
 
 def principal():
@@ -33,6 +34,14 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
+    numero1 = 1
+    numero2 = 2
+    comparador = compara(numero1, numero2)
+    print(comparador)
+    comparador = compara(numero2, numero1)
+    print(comparador)
+    comparador = compara(numero1, numero1)
+    print(comparador)
 
 if __name__ == "__main__":
     principal()
