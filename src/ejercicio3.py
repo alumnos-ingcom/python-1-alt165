@@ -34,8 +34,8 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    numero1 = 1
-    numero2 = 2
+    numero1 = -5
+    numero2 = 5
     comparador = compara(numero1, numero2)
     print(comparador)
     comparador = compara(numero2, numero1)
