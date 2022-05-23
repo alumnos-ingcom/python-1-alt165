@@ -18,11 +18,11 @@ def suma_lenta(numero, otro_numero):
     """suma_lenta(int, int) -> int
         esta función devuelve el resultado de la suma de dos enteros
     """
-    if numero > 0:
+    if numero > 0: #Esta rama es si numero es positivo
         while numero > 0:
             otro_numero = otro_numero + 1
             numero = numero - 1
-    else:
+    else: #Esta rama es cuando el primer número es negativo
         while numero < 0:
             otro_numero = otro_numero - 1
             numero = numero + 1
@@ -34,7 +34,12 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-
+    numero1 = 5
+    numero2 = -10
+    resultado = suma_lenta(numero1, numero2)
+    print(numero1, "+", numero2, "=", resultado)
+    resultado = suma_lenta(numero2, numero1)
+    print(numero2, "+", numero1, "=", resultado)
 
 if __name__ == "__main__":
     principal()
