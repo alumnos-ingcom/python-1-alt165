@@ -15,9 +15,7 @@ def swap(uno, dos):
     """swap(int|float,int|float)->int|float,int|float
     esta funcion toma dos valores y los devuelve intercambiados
     """
-    var_aux = uno
-    uno = dos
-    dos = var_aux
+    uno, dos = dos, uno
     return uno, dos
 
 

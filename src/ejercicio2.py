@@ -27,9 +27,9 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    print(signo(-5))
-    print(signo(0))
-    print(signo(5))
+    numero = int(input("Ingresar un número para devolver su signo:"))
+    resultado = signo(numero)
+    print(resultado)
 
 if __name__ == "__main__":
     principal()

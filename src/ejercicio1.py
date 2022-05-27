@@ -31,10 +31,19 @@ def convertir_a_centigrados(fahrenheit):
     return resultado
 
 def principal():
-    """
-    Esta función es la que se encarga de la parte 'interactiva' del ejercicio
-    (La entrada, la llamada al algoritmo y la salida)
-    """
+    opcion = ""
+    print("Para cambiar de centrigrados a fahrenheit presione c.\n")
+    print("Para cambiar de fahrenheit a centigrados presione f.\n")
+    while opcion != "c" and opcion != "f":
+        opcion = input().lower()
+
+    temperatura = int(input("Cuántos grados quiere convertir?: "))
+    if opcion == "f":
+        resultado = convertir_a_centigrados(temperatura)
+    else:
+        resultado = convertir_a_fahrrenheit(temperatura)
+    print(f"El resultado de la conversión es: {resultado}")
+
 
 if __name__ == "__main__":
     principal()
