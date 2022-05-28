@@ -34,14 +34,29 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    numero1 = -5
-    numero2 = 5
+    numero1 = ""
+    numero2 = ""
+    while not isinstance(numero1, int):
+        numero1 = input("Ingrese el primer número: ")
+        if numero1.lstrip("-").isdecimal():
+            numero1 = int(numero1)
+        else:
+            print("No es un valor válido")
+
+    while not isinstance(numero2, int):
+        numero2 = input("Ingrese el segundo número: ")
+        if numero2.lstrip("-").isdecimal():
+            numero2 = int(numero2)
+        else:
+            print("No es un valor válido")
+
     comparador = compara(numero1, numero2)
-    print(comparador)
-    comparador = compara(numero2, numero1)
-    print(comparador)
-    comparador = compara(numero1, numero1)
-    print(comparador)
+    if comparador > 0:
+        print(f"{numero1} es mayor que {numero2}")
+    elif comparador < 0:
+        print(f"{numero1} es menor que {numero2}")
+    else:
+        print(f"{numero1} y {numero2} son iguales")
 
 if __name__ == "__main__":
     principal()

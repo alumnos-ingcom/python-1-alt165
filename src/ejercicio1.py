@@ -46,7 +46,7 @@ def principal():
     while not isinstance(temperatura, int):
         #este ciclo es para que solo se puedan ingresar valores numericos
         temperatura = input("Cuántos grados quiere convertir?: ")
-        if temperatura.isdecimal():
+        if temperatura.lstrip("-").isdecimal():
             temperatura = int(temperatura)
         else:
             print("No es un valor válido")
