@@ -2,7 +2,6 @@
 # José Lambrechts - @alt165
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-
 """
 Se quiere transformar temperaturas en grados fahrenheit a grados centígrados
 y viceversa.
@@ -11,7 +10,6 @@ Escribir las funciones para convertir la temperatura en grados centigrados
 en fahrenheit como un número decimal, utilice esta formula para calcular
 los grados centígrados y retorne el resultado obtenido. Y viceversa.
 """
-
 
 def convertir_a_fahrrenheit(centigrados):
     """convertir_a_fahrrenheit(float) -> float
@@ -31,19 +29,33 @@ def convertir_a_centigrados(fahrenheit):
     return resultado
 
 def principal():
+    """
+    Esta función es la que se encarga de la parte 'interactiva' del ejercicio
+    (La entrada, la llamada al algoritmo y la salida)
+    """
     opcion = ""
+    temperatura = ""
+
     print("Para cambiar de centrigrados a fahrenheit presione c.\n")
     print("Para cambiar de fahrenheit a centigrados presione f.\n")
-    while opcion != "c" and opcion != "f":
+
+    while opcion not in ('c', 'f'):
+        #limita las opciones a solo c o f.
         opcion = input().lower()
 
-    temperatura = int(input("Cuántos grados quiere convertir?: "))
+    while not isinstance(temperatura, int):
+        #este ciclo es para que solo se puedan ingresar valores numericos
+        temperatura = input("Cuántos grados quiere convertir?: ")
+        if temperatura.isdecimal():
+            temperatura = int(temperatura)
+        else:
+            print("No es un valor válido")
+
     if opcion == "f":
         resultado = convertir_a_centigrados(temperatura)
     else:
         resultado = convertir_a_fahrrenheit(temperatura)
     print(f"El resultado de la conversión es: {resultado}")
-
 
 if __name__ == "__main__":
     principal()
