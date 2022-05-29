@@ -34,12 +34,24 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    numero1 = 5
-    numero2 = -10
+    numero1 = ""
+    numero2 = ""
+    while not isinstance(numero1, int):
+        numero1 = input("Ingrese el primer número a sumar: ")
+        if numero1.lstrip("-").isdecimal():
+            numero1 = int(numero1)
+        else:
+            print("No es un valor válido")
+
+    while not isinstance(numero2, int):
+        numero2 = input("Ingrese el segundo número a sumar: ")
+        if numero2.lstrip("-").isdecimal():
+            numero2 = int(numero2)
+        else:
+            print("No es un valor válido")
+
     resultado = suma_lenta(numero1, numero2)
-    print(numero1, "+", numero2, "=", resultado)
-    resultado = suma_lenta(numero2, numero1)
-    print(numero2, "+", numero1, "=", resultado)
+    print(f"El resultado de {numero1} + {numero2} es {resultado}")
 
 if __name__ == "__main__":
     principal()

@@ -38,14 +38,26 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    numero1 = 7
-    numero2 = 2
-    resultado = division_lenta(numero1, numero2)
-    print(numero1, "/", numero2, "=", resultado)
-    resultado = division_lenta(numero2, numero1)
-    print(numero2, "/", numero1, "=", resultado)
-    resultado = division_lenta(numero1, numero1)
-    print(numero1, "/", numero1, "=", resultado)
+    print("Este programa devuelve el resultado de la división entre dividendo y divisor.\n")
+    print("Divisor no puede ser 0 y ambos deben ser positivos\n")
+    dividendo = ""
+    divisor = ""
+    while not isinstance(dividendo, int):
+        dividendo = input("Ingrese el dividendo: ")
+        if dividendo.isdecimal():
+            dividendo = int(dividendo)
+        else:
+            print("No es un valor válido")
+
+    while not isinstance(divisor, int):
+        divisor = input("Ingrese el divisor: ")
+        if divisor.isdecimal() and divisor != "0":
+            divisor = int(divisor)
+        else:
+            print("No es un valor válido")
+
+    resultado = division_lenta(dividendo, divisor)
+    print(f"{dividendo} / {divisor} = {resultado[0]}, resto = {resultado[1]}")
 
 if __name__ == "__main__":
     principal()

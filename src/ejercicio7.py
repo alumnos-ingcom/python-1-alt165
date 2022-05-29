@@ -36,8 +36,55 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    print(sexadecimal_a_decimal(1, 1, 1))
-    print(decimal_a_sexadecimal(sexadecimal_a_decimal(2, 70, 2)))
+    opcion = ""
+    decimal = ""
+    grados = ""
+    minutos = ""
+    segundos = ""
+
+    print("Para convertir de sexadecimal a decimal precione S")
+    print("Para convertir de decimal a sexadecimal presione D")
+    while opcion not in ("d", "D", "s", "S"):
+        opcion = input()
+
+    if opcion in ("d", "D"):
+        while not isinstance(decimal, int):
+            decimal = input("Cuál es valor a convertir?: ")
+            if decimal.isdecimal():
+                decimal = int(decimal)
+            else:
+                print("No es un valor válido")
+            resultado = decimal_a_sexadecimal(decimal)
+            print(f"El equivalente a {decimal} es: {resultado[0]}°, {resultado[1]}', {resultado[2]}''")
+    else:
+        while not isinstance(grados, int):
+            grados = input("Ingrese grados: ")
+            if grados.lstrip("-").isdecimal():
+                grados = int(grados)
+            else:
+                print("No es un valor válido")
+
+        while not isinstance(minutos, int):
+            minutos = input("Ingrese minutos (menor a 60)")
+            if minutos.isdecimal():
+                minutos = int(minutos)
+                if minutos > 60:
+                    minutos = ""
+                    print("Los minutos deben ser menores a 60")
+            else:
+                print("No es un valor válido")
+
+        while not isinstance(segundos, int):
+            segundos = input("Ingrese segundos (menor a 60)")
+            if segundos.isdecimal():
+                segundos = int(segundos)
+                if segundos > 60:
+                    segundos = ""
+                    print("Los segundos deben ser menores a 60")
+            else:
+                print("No es un valor válido")
+        resultado = sexadecimal_a_decimal(grados, minutos, segundos)
+        print(f"{grados}°, {minutos}', {segundos}'' = {resultado} en decimal.")
 
 if __name__ == "__main__":
     principal()
