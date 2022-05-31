@@ -13,6 +13,15 @@ Y otra que haga el cambio en el sentido contrario, devolviendo una tuple.
 Recuerden que un grado son 60 minutos y un minuto son 60 segundos.
 
 """
+class MayorASesenta(Exception):
+    """Esta excepcion se lanza cuando el valor es > 60
+    """
+
+
+class Negativo(Exception):
+    """Esta excepcion se lanza cuando el número es negativo"""
+
+
 def sexadecimal_a_decimal(horas, minutos, segundos):
     """sexadecimal_a_decimal(horas int, minutos int < 60, segundos int < 60) -> int
     esta función toma tres valores expresados en grados minutos y segundos
@@ -37,52 +46,64 @@ def principal():
     (La entrada, la llamada al algoritmo y la salida)
     """
     opcion = ""
-    decimal = ""
-    grados = ""
-    minutos = ""
-    segundos = ""
 
-    print("Para convertir de sexadecimal a decimal precione S")
+    print("Para convertir de sexadecimal a decimal presione S")
     print("Para convertir de decimal a sexadecimal presione D")
     while opcion not in ("d", "D", "s", "S"):
         opcion = input()
 
     if opcion in ("d", "D"):
-        while not isinstance(decimal, int):
-            decimal = input("Cuál es valor a convertir?: ")
-            if decimal.isdecimal():
-                decimal = int(decimal)
-            else:
+        continuar = True
+        while continuar:
+            try:
+                decimal = int(input("Cuál es valor a convertir?: "))
+                continuar = False
+            except ValueError:
                 print("No es un valor válido")
-            resultado = decimal_a_sexadecimal(decimal)
-            print(f"El equivalente a {decimal} es: {resultado[0]}°, {resultado[1]}', {resultado[2]}''")
+
+        resultado = decimal_a_sexadecimal(decimal)
+        print(f"El equivalente a {decimal} es: {resultado[0]}°, {resultado[1]}', {resultado[2]}''")
     else:
-        while not isinstance(grados, int):
-            grados = input("Ingrese grados: ")
-            if grados.lstrip("-").isdecimal():
-                grados = int(grados)
-            else:
+        continuar = True
+        while continuar:
+            try:
+                grados = int(input("Ingrese grados: "))
+                continuar = False
+            except ValueError:
                 print("No es un valor válido")
 
-        while not isinstance(minutos, int):
-            minutos = input("Ingrese minutos (menor a 60)")
-            if minutos.isdecimal():
-                minutos = int(minutos)
-                if minutos > 60:
-                    minutos = ""
-                    print("Los minutos deben ser menores a 60")
-            else:
+        continuar = True
+        while continuar:
+            try:
+                minutos = int(input("Ingrese minutos (menor a 60)"))
+                if minutos > 59:
+                    raise MayorASesenta
+                if minutos < 0:
+                    raise Negativo
+                continuar = False
+            except ValueError:
                 print("No es un valor válido")
+            except MayorASesenta:
+                print("Los minutos no pueden ser mayores a 59")
+            except Negativo:
+                print("Los minutos no pueden ser negativos")
 
-        while not isinstance(segundos, int):
-            segundos = input("Ingrese segundos (menor a 60)")
-            if segundos.isdecimal():
-                segundos = int(segundos)
-                if segundos > 60:
-                    segundos = ""
-                    print("Los segundos deben ser menores a 60")
-            else:
+        continuar = True
+        while continuar:
+            try:
+                segundos = int(input("Ingrese segundos (menor a 60)"))
+                if segundos > 59:
+                    raise MayorASesenta
+                if segundos < 0:
+                    raise Negativo
+                continuar = False
+            except ValueError:
                 print("No es un valor válido")
+            except MayorASesenta:
+                print("Los segundos no pueden ser mayores a 59")
+            except Negativo:
+                print("Los segundos no pueden ser negativos")
+
         resultado = sexadecimal_a_decimal(grados, minutos, segundos)
         print(f"{grados}°, {minutos}', {segundos}'' = {resultado} en decimal.")
 
