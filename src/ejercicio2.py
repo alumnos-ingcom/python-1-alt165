@@ -27,13 +27,13 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    numero = ""
-    while not isinstance(numero, int):
+    continuar = True
+    while continuar:
         #este ciclo es para que solo se puedan ingresar valores numericos
-        numero = input("Ingresar un número para devolver su signo:")
-        if numero.lstrip("-").isdigit():
-            numero = int(numero)
-        else:
+        try:
+            numero = int(input("Ingresar un número para devolver su signo:"))
+            continuar = False
+        except ValueError:
             print("No es un valor válido")
         
     resultado = signo(numero)

@@ -34,21 +34,22 @@ def principal():
     (La entrada, la llamada al algoritmo y la salida)
     """
     opcion = ""
-    temperatura = ""
-
+    
     print("Para cambiar de centrigrados a fahrenheit presione c.\n")
     print("Para cambiar de fahrenheit a centigrados presione f.\n")
 
     while opcion not in ('c', 'f'):
         #limita las opciones a solo c o f.
         opcion = input().lower()
+    
+    continuar = True
 
-    while not isinstance(temperatura, int):
+    while continuar:
         #este ciclo es para que solo se puedan ingresar valores numericos
-        temperatura = input("Cuántos grados quiere convertir?: ")
-        if temperatura.lstrip("-").isdecimal():
-            temperatura = int(temperatura)
-        else:
+        try:
+            temperatura = int(input("Cuántos grados quiere convertir?: "))
+            continuar = False
+        except ValueError:
             print("No es un valor válido")
 
     if opcion == "f":
