@@ -1,3 +1,4 @@
+"""Prueba de la función suma_lenta del ejercicio4"""
 from src.ejercicio4 import suma_lenta
 
 def test_positivo():

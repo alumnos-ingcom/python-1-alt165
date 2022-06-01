@@ -1,3 +1,4 @@
+""" pruebas de funciones ordenar_mayor_a_menor, ordenar_menor_a_mayor del ejercicio6"""
 from src.ejercicio6 import ordenar_mayor_a_menor, ordenar_menor_a_mayor
 
 def test_mayor_menor_iguales():
@@ -26,7 +27,7 @@ def test_mayor_menor_negativos():
     resultado = ordenar_mayor_a_menor(numero1, numero2, numero3)
     assert isinstance(resultado, tuple), "el resultado debe ser una tupla"
     assert resultado == (-3, -4, -5), "No obtenemos el resultado esperado"
-    
+
 def test_menor_mayor_negativos():
     """Prueba con numeros negativos"""
     numero1 = -1

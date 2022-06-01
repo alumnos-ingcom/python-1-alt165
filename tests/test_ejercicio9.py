@@ -1,5 +1,5 @@
+"""Pruebas de la funcion factores_primos del ejercicio9"""
 from src.ejercicio9 import factores_primos
-
 
 def test_negativo():
     """prueba números negativos"""
