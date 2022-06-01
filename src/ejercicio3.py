@@ -41,7 +41,7 @@ def principal():
             continuar = False
         except ValueError:
             print("No es un valor válido")
-    
+
     continuar = True
     while continuar:
         try:

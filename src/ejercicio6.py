@@ -62,7 +62,7 @@ def principal():
         try:
             numero3 = int(input("Ingrese el tercer número: "))
             continuar = False
-        except:
+        except ValueError:
             print("No es un valor válido")
 
     print("Los valores ordenados son:")

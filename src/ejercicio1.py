@@ -34,14 +34,14 @@ def principal():
     (La entrada, la llamada al algoritmo y la salida)
     """
     opcion = ""
-    
+
     print("Para cambiar de centrigrados a fahrenheit presione c.\n")
     print("Para cambiar de fahrenheit a centigrados presione f.\n")
 
     while opcion not in ('c', 'f'):
         #limita las opciones a solo c o f.
         opcion = input().lower()
-    
+
     continuar = True
 
     while continuar:

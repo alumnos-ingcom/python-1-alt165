@@ -19,7 +19,7 @@ try:
     from ejercicio8 import es_primo
 except ImportError as exc:
     from src.ejercicio8 import es_primo
-    
+
 def es_multiplo(multiplo, divisor):
     """es_multiplo(int, int)-> boolean
     esta función devuelve true si un numero es divisor del otro

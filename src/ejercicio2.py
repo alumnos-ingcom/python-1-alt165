@@ -35,9 +35,10 @@ def principal():
             continuar = False
         except ValueError:
             print("No es un valor válido")
-        
+
     resultado = signo(numero)
     print(resultado)
 
 if __name__ == "__main__":
     principal()
+    

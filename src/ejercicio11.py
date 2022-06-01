@@ -12,7 +12,7 @@ de otro, utilizando sumas y restas.
 """
 class NegativoExc(Exception):
     """Esta exepcion se levanta si un valor es negativo"""
-    
+
 def es_multiplo(numero, multiplo):
     """es_multiplo(int,int)-> boolean
     esta función devuelve True si multiplo es multiplo de numero,
@@ -59,6 +59,6 @@ def principal():
         print(f"{posible_multiplo} es múltiplo de  {numero}")
     else:
         print(f"{posible_multiplo} no es múltiplo de  {numero}")
-    
+
 if __name__ == "__main__":
     principal()
