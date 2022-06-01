@@ -1,3 +1,6 @@
+"""Prueba de las funciones convertir_a_fahrrenheit, convertir_a_centigrados
+del ejercicio1
+"""
 from src.ejercicio1 import convertir_a_fahrrenheit, convertir_a_centigrados
 
 def test_fahrenheit():

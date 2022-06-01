@@ -1,3 +1,4 @@
+"""Prueba de la funcion signo del ejercicio2"""
 from src.ejercicio2 import signo
 
 def test_positivo():
@@ -12,7 +13,7 @@ def test_cero():
     numero = 0
     resultado = signo(numero)
     assert resultado == 0, "No obtenemos el resultado esperado"
-    
+
 def test_negativo():
     """Probar con valores negativos"""
     numero = -100
