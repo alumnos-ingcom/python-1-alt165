@@ -34,7 +34,11 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    print(es_palindromo("aSdsa"))
+    entrada = input("Ingresar el texto a verificar: ")
+    if es_palindromo(entrada):
+        print("el texto es palindromo")
+    else:
+        print("El texto no es palindromo")
 
 if __name__ == "__main__":
     principal()

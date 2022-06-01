@@ -18,7 +18,7 @@ def es_primo(numero):
         return False
 
     es_primo_flag = True
-    if numero == 1 or numero == 2:
+    if numero in (1, 2):
         return True
 
     if numero % 2 == 0:
@@ -41,15 +41,17 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    desde = 1
-    hasta = 200
-    while desde < hasta:
-        print(desde)
-        if es_primo(desde):
-            print(" es primo\n")
-        else:
-            print(" no es primo\n")
-        desde = desde + 1
+    continuar = True
+    while continuar:
+        try:
+            numero = int(input("Ingrese el número para evaluar si es primo: "))
+            continuar = False
+        except ValueError:
+            print("No es un valor válido")
+    if es_primo(numero):
+        print(f"{numero} es primo")
+    else:
+        print(f"{numero} no es primo")
 
 if __name__ == "__main__":
     principal()

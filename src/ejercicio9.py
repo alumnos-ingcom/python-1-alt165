@@ -11,8 +11,15 @@ numero entero positivo.
 
 def factores_primos(numero):
 """
-from ejercicio8 import es_primo
+class NegativoExc(Exception):
+    """Esta excepcion se lanza cuando el número es negativo"""
 
+#from ejercicio8 import es_primo
+try:
+    from ejercicio8 import es_primo
+except ImportError as exc:
+    from src.ejercicio8 import es_primo
+    
 def es_multiplo(multiplo, divisor):
     """es_multiplo(int, int)-> boolean
     esta función devuelve true si un numero es divisor del otro
@@ -43,7 +50,20 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    print(factores_primos(110))
+    continuar = True
+    while continuar:
+        try:
+            numero = int(input("Ingrese el número para buscar sus factores primos: "))
+            if numero < 0:
+                raise NegativoExc
+            continuar = False
+        except ValueError:
+            print("No es un valor válido")
+        except  NegativoExc:
+            print("El número tiene que ser positivo")
+
+    resultado = factores_primos(numero)
+    print(f"Los factores primos de {numero} son: {resultado}")
 
 if __name__ == "__main__":
     principal()

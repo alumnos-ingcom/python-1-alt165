@@ -13,12 +13,12 @@ Y otra que haga el cambio en el sentido contrario, devolviendo una tuple.
 Recuerden que un grado son 60 minutos y un minuto son 60 segundos.
 
 """
-class MayorASesenta(Exception):
+class MayorASesentaExc(Exception):
     """Esta excepcion se lanza cuando el valor es > 60
     """
 
 
-class Negativo(Exception):
+class NegativoExc(Exception):
     """Esta excepcion se lanza cuando el número es negativo"""
 
 
@@ -57,9 +57,13 @@ def principal():
         while continuar:
             try:
                 decimal = int(input("Cuál es valor a convertir?: "))
+                if decimal < 0:
+                    raise NegativoExc
                 continuar = False
             except ValueError:
                 print("No es un valor válido")
+            except NegativoExc:
+                print("El valor debe ser positivo")
 
         resultado = decimal_a_sexadecimal(decimal)
         print(f"El equivalente a {decimal} es: {resultado[0]}°, {resultado[1]}', {resultado[2]}''")
@@ -68,24 +72,28 @@ def principal():
         while continuar:
             try:
                 grados = int(input("Ingrese grados: "))
+                if grados < 0:
+                    raise NegativoExc
                 continuar = False
             except ValueError:
                 print("No es un valor válido")
+            except NegativoExc:
+                print("El valor debe ser positivo")
 
         continuar = True
         while continuar:
             try:
                 minutos = int(input("Ingrese minutos (menor a 60)"))
                 if minutos > 59:
-                    raise MayorASesenta
+                    raise MayorASesentaExc
                 if minutos < 0:
-                    raise Negativo
+                    raise NegativoExc
                 continuar = False
             except ValueError:
                 print("No es un valor válido")
-            except MayorASesenta:
+            except MayorASesentaExc:
                 print("Los minutos no pueden ser mayores a 59")
-            except Negativo:
+            except NegativoExc:
                 print("Los minutos no pueden ser negativos")
 
         continuar = True
@@ -93,15 +101,15 @@ def principal():
             try:
                 segundos = int(input("Ingrese segundos (menor a 60)"))
                 if segundos > 59:
-                    raise MayorASesenta
+                    raise MayorASesentaExc
                 if segundos < 0:
-                    raise Negativo
+                    raise NegativoExc
                 continuar = False
             except ValueError:
                 print("No es un valor válido")
-            except MayorASesenta:
+            except MayorASesentaExc:
                 print("Los segundos no pueden ser mayores a 59")
-            except Negativo:
+            except NegativoExc:
                 print("Los segundos no pueden ser negativos")
 
         resultado = sexadecimal_a_decimal(grados, minutos, segundos)
