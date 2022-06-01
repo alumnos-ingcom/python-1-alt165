@@ -1,6 +1,3 @@
-#import sys
-#import pytest
-#from ejercicio2 import signo
 from src.ejercicio2 import signo
 
 def test_positivo():
